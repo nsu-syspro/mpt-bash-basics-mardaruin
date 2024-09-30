@@ -1,6 +1,8 @@
 #!/bin/bash
 
-for (( i=$#; i>=1; i-- )); do
-	echo "${!i}";
-done
+tac $1
+
+#for (( i=$#; i>=1; i-- )); do
+#	echo "${!i}";
+#done
 
