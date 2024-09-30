@@ -1,10 +1,16 @@
 #!/bin/bash
 
-suffix=$1
-extention=$2
+suffix=''
 
-#for filename in *.*; do
-	if [ ${filename##*/} -eq $extention ] then
-		mv -v "$filename" "$filename$suffix"
-	fi
-#done
+for opt in $@
+do
+  echo "suffix is $suffix"
+  if [[ ! -n "$suffix" ]]; then
+   suffix="$opt"
+   echo "suffix assigned to be $suffix"
+  else
+   echo "will move $opt to $opt$suffix"
+   mv "$opt" "$opt$suffix" 
+   echo "move done"
+  fi
+done
