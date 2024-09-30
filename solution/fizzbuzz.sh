@@ -4,7 +4,7 @@ n=$1
 
 for (( i=1; i<=n; i++)); do
 	if ((i%15 == 0)); then
-		echo FizzBuzz
+		echo Fizz Buzz
 
 	elif ((i%3 == 0)); then
                 echo Fizz
