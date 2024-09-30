@@ -1,0 +1,21 @@
+#!/bin/bash
+
+params=xf
+prms=cf
+
+if [[ "$*" == *.gz ]]; then
+  params=xzf
+  prms=czf
+elif [[ "$*" == *.xz ]]; then
+  params=xJf
+  prms=cJf
+fi
+
+mkdir "$*.unpacked"
+
+echo "$*"
+echo "$params"
+tar "-$params" "$*"
+tar "-$prms" "$*.unpacked" some
+
+

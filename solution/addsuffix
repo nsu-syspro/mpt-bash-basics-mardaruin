@@ -1,0 +1,10 @@
+#!/bin/bash
+
+suffix=$1
+extention=$2
+
+#for filename in *.*; do
+	if [ ${filename##*/} -eq $extention ] then
+		mv -v "$filename" "$filename$suffix"
+	fi
+#done
