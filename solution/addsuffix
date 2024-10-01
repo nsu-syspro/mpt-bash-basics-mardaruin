@@ -4,13 +4,9 @@ suffix=''
 
 for opt in "$@"
 do
-#  echo "suffix is $suffix"
   if [[ -z $suffix ]]; then
    suffix="$opt"
-#   echo "suffix assigned to be $suffix"
   else
-#   echo "will move $opt to $opt$suffix"
    mv "$opt" "$opt$suffix" 
-#   echo "move done"
   fi
 done

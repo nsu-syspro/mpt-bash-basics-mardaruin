@@ -12,9 +12,8 @@ if [[ ! -d "$1.unpacked" ]]; then
 	mkdir "$1.unpacked"
 fi
 
-cd "$1.unpacked"
-tar "-$pExtract" "../$1"
-cd -
+tar "-$pExtract" "$1" -C "$1.unpacked"
+
 
 
 
