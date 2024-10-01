@@ -1,0 +1,12 @@
+#!/bin/bash
+
+suffix=''
+
+for opt in "$@"
+do
+  if [[ -z $suffix ]]; then
+   suffix="$opt"
+  else
+   mv "$opt" "$opt$suffix" 
+  fi
+done
