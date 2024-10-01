@@ -11,10 +11,12 @@ elif [[ "$*" == *.xz ]]; then
   prms=cJf
 fi
 
-mkdir "$*.unpacked"
+if [[ ! mkdir "$1.unpacked" ]]; then
+	mkdir "$1.unpacked"
+fi
 
-echo "$*"
-echo "$params"
+#echo "$*"
+#echo "$params"
 tar "-$params" "$*"
 tar "-$prms" "$*.unpacked" some
 

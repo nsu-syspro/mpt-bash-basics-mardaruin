@@ -2,10 +2,10 @@
 
 suffix=''
 
-for opt in $@
+for opt in "$@"
 do
 #  echo "suffix is $suffix"
-  if [[ ! -n "$suffix" ]]; then
+  if [[ -z $suffix ]]; then
    suffix="$opt"
 #   echo "suffix assigned to be $suffix"
   else
