@@ -1,23 +1,20 @@
 #!/bin/bash
 
-params=xf
-prms=cf
+pExtract=xf
 
 if [[ "$*" == *.gz ]]; then
-  params=xzf
-  prms=czf
+  pExtract=xzf
 elif [[ "$*" == *.xz ]]; then
-  params=xJf
-  prms=cJf
+  pExtract=xJf
 fi
 
-if [[ ! mkdir "$1.unpacked" ]]; then
+if [[ ! -d "$1.unpacked" ]]; then
 	mkdir "$1.unpacked"
 fi
 
-#echo "$*"
-#echo "$params"
-tar "-$params" "$*"
-tar "-$prms" "$*.unpacked" some
+cd "$1.unpacked"
+tar "-$pExtract" "../$1"
+cd -
+
 
 
